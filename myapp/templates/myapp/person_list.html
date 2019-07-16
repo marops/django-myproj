@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block content %}
+
+<style>
+    .table { max-width:400px }
+</style>
+
+<h1>People</h1>
+
+<table class="table table-sm table-striped table-bordered">
+{% for p in people %}
+    <tr>
+        <td><a href="/person/{{p.pk}}/">{{ p }}({{p.pk}})</a></td>
+    </tr>
+{% empty %}
+    <li>No people yet.</li>
+{% endfor %}
+</table>
+
+<div>
+    <a href="/person/0"/" class="btn btn-primary" role="button">Add New Person</a>
+
+</div>
+
+{% endblock %}

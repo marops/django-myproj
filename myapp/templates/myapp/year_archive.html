@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+
+{% block title %}Articles for {{ year }}{% endblock %}
+
+{% block content %}
+<h1>Articles for {{ year }}</h1>
+
+<table class="table">
+ <tr><th>Name</th><th>Author</th><th>Pub Date</th></tr>
+
+{% for article in article_list %}
+    <tr>
+        <td><a href="/article/{{article.pk}}">{{ article.headline }}</a></td>
+        <td>By {{ article.reporter.full_name }}</td>
+        <td>Published {{ article.pub_date|date:"j b Y"|upper }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

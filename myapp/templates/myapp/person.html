@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="/person/{{rid}}/" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="hidden" id="id" name="id" value="3">
+    <input type="submit" class="btn btn-primary" value="Submit" />
+    {% if rid > 0 %}
+    <a href="/person/{{rid}}/delete/" class="btn btn-primary" value="Delete" />Delete</a>
+    {% endif %}
+</form>
+{% endblock %}

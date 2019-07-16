@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+
+{% block title %}Article{% endblock %}
+
+{% block content %}
+<h2>Article</h2>
+<p>{{ article.headline }}</p>
+
+  <div class="card">
+    <div class="card-body">{{article.content}}</div>
+  </div>
+<br></br>Author:{{article.reporter}}
+
+{% endblock %}

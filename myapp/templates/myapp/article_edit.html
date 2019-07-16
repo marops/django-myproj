@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Article - editing</h1>
+<form action="{{rid}}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="hidden" id="id" name="id" value="3">
+    <input type="submit" class="btn btn-primary" value="Submit" />
+    {% if rid > 0 %}
+    <a href="{{rid}}/delete/" class="btn btn-primary" value="Delete" />Delete</a>
+    {% endif %}
+</form>
+
+<script>
+    $('#id_pub_date').width('10em')
+    $('#id_reporter').width('15em')
+</script>
+
+{% endblock %}

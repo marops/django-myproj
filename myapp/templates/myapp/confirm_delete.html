@@ -1,0 +1,11 @@
+{% extends 'template.html' %}
+{% block content %}
+<div style="margin:auto;text-align:center">
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <button type="submit" class="btn btn-primary" value="confirm">Confirm</button>
+    <a href="{{success_url}}" class="btn btn-primary" role="button">Cancel</a>
+</div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'template.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+
+<h1>Articles using Table2</h1>
+    {% render_table table %}
+
+<div style="padding:1em">
+    <a href="/article_edit/0"/" class="btn btn-primary" role="button">New Article</a>
+</div>
+
+
+<script>
+    $('.table').addClass('table-sm table-striped table-bordered')
+</script>
+{% endblock %}

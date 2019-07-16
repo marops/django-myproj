@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+{% block content %}
+{% load static %}
+<h1>About</h1>
+{{msg}}
+{% url 'myapp:myapp-about' %}
+<script src="{% static "js/mgrs.js" %}"></script>
+<img src="{% static "parade01.jpg" %}" alt="My image"/>
+
+{% endblock %}

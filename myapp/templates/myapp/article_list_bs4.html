@@ -1,0 +1,34 @@
+{% extends 'template.html' %}
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{% block content %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_javascript jquery=True %}
+{% bootstrap_messages %}
+
+<h2>Articles with BS4 Tags</h2>
+
+<table class="table table-bordered table-sm">
+  <thead>
+    <tr>
+      <th>Headline</th>
+      <th>Pub Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in articles %}
+      <tr>
+        <td><a href="/article/{{a.pk}}">{{ a.headline }}</td>
+        <td>{{ a.pub_date|date:'Y-m-d' }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% bootstrap_pagination page_obj %}
+
+Page {{page_obj.number}} of {{paginator.num_pages}}
+
+{% endblock %}
