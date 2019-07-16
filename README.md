@@ -2,7 +2,7 @@
 
 Example Django project
 
-##Use Additional Applications in Separate Repos
+## Use Additional Applications in Separate Repos
 
 * documents (django-documents)
 * ol (marops.com/dj-ol)
